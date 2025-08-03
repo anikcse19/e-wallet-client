@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { TbKayak } from "react-icons/tb";
 
 const Navbar = () => {
-    const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(false);
   return (
     <div className=" bg-[#e2136e] flex justify-between px-3 py-3 text-white">
       <div className=" flex items-center gap-3">
@@ -29,11 +29,11 @@ const Navbar = () => {
 
               {/* Knob */}
               <span
-                className={`absolute top-1 bg-pink-600 left-1 w-5 h-5 text-center rounded-full transition-all duration-500  ${
+                className={`absolute top-1 bg-pink-600 left-1 w-5 h-5  text-center rounded-full transition-all duration-500  ${
                   checked ? "translate-x-28 " : "translate-x-0"
                 }`}
               >
-                $
+                <h2 className=" text-xl -mt-1.5">৳</h2>
               </span>
             </label>
           </div>

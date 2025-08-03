@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import BannerSlider from "./components/home/BannerSlider";
 import MyBkash from "./components/home/MyBkash";
 import ServiceSection from "./components/home/ServiceSection";
@@ -7,10 +8,7 @@ import Navbar from "./components/shared/Navbar";
 function App() {
   return (
     <div className=" ">
-      <Navbar></Navbar>
-      <ServiceSection></ServiceSection>
-      <MyBkash></MyBkash>
-      <BannerSlider></BannerSlider>
+     <Outlet></Outlet>
       <BottomNavbar></BottomNavbar>
     </div>
   );
