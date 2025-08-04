@@ -6,6 +6,7 @@ import App from "../App";
 import MobileRecharge from "../pages/MobileRecharge";
 import Inbox from "../pages/inbox/Inbox";
 import Login from "../pages/Login";
+import P2pService from "../pages/p2p/P2pService";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       },
       { path: "/inbox", element: <Inbox></Inbox> },
       { path: "/recharge", element: <MobileRecharge></MobileRecharge> },
+      { path: "/p2p", element: <P2pService></P2pService> },
     ],
   },
   {

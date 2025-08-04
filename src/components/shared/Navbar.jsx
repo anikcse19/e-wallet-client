@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { TbKayak } from "react-icons/tb";
 import { getWallet } from "../../services/walletApi";
+import { token } from "../../services/token";
 
 const Navbar = () => {
   const [checked, setChecked] = useState(false);
     const [wallet, setWallet] = useState(null);
 
     useEffect(() => {
-         const token = localStorage.getItem("token"); // Or from your auth context/state
+        // Or from your auth context/state
          if (!token) {
            console.error("No token found!");
            return;
