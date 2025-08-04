@@ -1,8 +1,10 @@
 import React from 'react';
-import Navbar from '../components/shared/Navbar';
-import ServiceSection from '../components/home/ServiceSection';
-import MyBkash from '../components/home/MyBkash';
-import BannerSlider from '../components/home/BannerSlider';
+
+import ServiceSection from './components/ServiceSection';
+import MyBkash from './components/MyBkash';
+import BannerSlider from './components/BannerSlider';
+import Navbar from '../../components/shared/Navbar';
+
 
 const Home = () => {
     return (

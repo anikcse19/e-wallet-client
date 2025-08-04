@@ -42,7 +42,7 @@ const MobileRecharge = () => {
    const [search, setSearch] = useState("");
 
    return (
-     <div className="w-full max-w-md mx-auto bg-white min-h-screen">
+     <div className="w-full  mx-auto bg-white min-h-screen">
        <div className="flex items-center justify-between bg-pink-600 text-white p-4">
          <button className="text-xl text-whit">
            <FaArrowLeft />

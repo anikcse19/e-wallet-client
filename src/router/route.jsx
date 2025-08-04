@@ -1,8 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../pages/Home";
+
+import Register from "../pages/Register";
+import Home from "../pages/home/Home";
 import App from "../App";
-import Inbox from "../pages/Inbox";
 import MobileRecharge from "../pages/MobileRecharge";
+import Inbox from "../pages/inbox/Inbox";
+import Login from "../pages/Login";
 
 const router = createBrowserRouter([
   {
@@ -14,8 +17,16 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       { path: "/inbox", element: <Inbox></Inbox> },
-      { path: "/recharge", element:<MobileRecharge></MobileRecharge>},
+      { path: "/recharge", element: <MobileRecharge></MobileRecharge> },
     ],
+  },
+  {
+    path: "/signup",
+    element: <Register></Register>,
+  },
+  {
+    path: "/login",
+    element: <Login></Login>,
   },
 ]);
 export default router;
