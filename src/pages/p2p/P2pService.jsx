@@ -1,44 +1,53 @@
 import React, { useState } from "react";
-import TransactionsTab from "./components/TransactionsTab";
 import Header from "../../components/shared/Header";
+import OfferList from "./components/offer/OfferList";
 
-const Inbox = () => {
-  const [activeTab, setActiveTab] = useState("transactions");
+const P2pService = () => {
+  const [activeTab, setActiveTab] = useState("offer");
   return (
     <div className="w-full mx-auto mb-12">
       {/* Header */}
-      <Header page="Inbox"></Header>
+      <Header page="P2P service"></Header>
 
       {/* Tabs */}
       <div className="flex border-b border-gray-200">
         <button
-          onClick={() => setActiveTab("transactions")}
+          onClick={() => setActiveTab("offer")}
           className={`flex-1 text-center py-2 ${
-            activeTab === "transactions"
+            activeTab === "offer"
               ? "text-pink-600 border-b-2 border-pink-600 font-semibold"
               : "text-gray-500"
           }`}
         >
-          Transactions
+          Offer
         </button>
         <button
-          onClick={() => setActiveTab("notifications")}
+          onClick={() => setActiveTab("message")}
           className={`flex-1 text-center py-2 ${
-            activeTab === "notifications"
+            activeTab === "message"
               ? "text-pink-600 border-b-2 border-pink-600 font-semibold"
               : "text-gray-500"
           }`}
         >
-          Notifications
+          Message
+        </button>
+        <button
+          onClick={() => setActiveTab("trade")}
+          className={`flex-1 text-center py-2 ${
+            activeTab === "trade"
+              ? "text-pink-600 border-b-2 border-pink-600 font-semibold"
+              : "text-gray-500"
+          }`}
+        >
+          Trade
         </button>
       </div>
 
       {/* Tab Content */}
       <div className="p-4">
-        {activeTab === "transactions" ? (
+        {activeTab === "offer" ? (
           <div>
-            {/* You can map transaction list here */}
-            <TransactionsTab></TransactionsTab>
+        <OfferList></OfferList>
           </div>
         ) : (
           <div>
@@ -51,4 +60,4 @@ const Inbox = () => {
   );
 };
 
-export default Inbox;
+export default P2pService;

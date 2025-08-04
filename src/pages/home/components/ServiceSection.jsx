@@ -97,6 +97,12 @@ const services = [
     icon: "/service/loan.webp",
     link: "/",
   },
+  {
+    id: 17,
+    title: "P2P",
+    icon: "/service/p2p.png",
+    link: "/p2p",
+  },
 ];
 ;
 const ServiceSection = () => {
