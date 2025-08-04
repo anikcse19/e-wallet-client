@@ -1,8 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { TbKayak } from "react-icons/tb";
+import { getWallet } from "../../services/walletApi";
 
 const Navbar = () => {
   const [checked, setChecked] = useState(false);
+    const [wallet, setWallet] = useState(null);
+
+    useEffect(() => {
+         const token = localStorage.getItem("token"); // Or from your auth context/state
+         if (!token) {
+           console.error("No token found!");
+           return;
+         }
+      (async () => {
+        try {
+          const data = await getWallet(token);
+          console.log(data)
+          setWallet(data);
+        } catch (err) {
+          console.error(err);
+        }
+      })();
+    }, []);
+    console.log(wallet)
   return (
     <div className=" bg-[#e2136e] flex justify-between px-3 py-3 text-white">
       <div className=" flex items-center gap-3">
@@ -24,7 +44,7 @@ const Navbar = () => {
 
               {/* Text */}
               <span className="text-black text-center text-sm font-semibold select-none">
-                {checked ? "$234" : "Check Balance"}
+                {checked ? <>৳{wallet?.balance}</> : "Check Balance"}
               </span>
 
               {/* Knob */}

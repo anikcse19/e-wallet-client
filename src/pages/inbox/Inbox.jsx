@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import TransactionsTab from '../components/inbox/TransactionsTab';
+import TransactionsTab from './components/TransactionsTab';
+
 
 const Inbox = () => {
       const [activeTab, setActiveTab] = useState("transactions");
