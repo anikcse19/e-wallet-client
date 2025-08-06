@@ -5,7 +5,7 @@ export const getTransactionHistory = async (token) => {
     const response = await api.get("/api/users/transactions", {
       headers: { Authorization: `Bearer ${token}` },
     });
-    return response.data;
+    return response?.data?.history;
   } catch (error) {
     console.error("Error fetching transactions history data", error);
     throw error;
