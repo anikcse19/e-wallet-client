@@ -7,6 +7,9 @@ import MobileRecharge from "../pages/MobileRecharge";
 import Inbox from "../pages/inbox/Inbox";
 import Login from "../pages/Login";
 import P2pService from "../pages/p2p/P2pService";
+import BuyerOfferPage from "../pages/buyerOffer/BuyerOfferPage";
+import JoinListPage from "../pages/joinLists/JoinListPage";
+import MyTradeList from "../pages/tradeList/MyTradeList";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +23,9 @@ const router = createBrowserRouter([
       { path: "/inbox", element: <Inbox></Inbox> },
       { path: "/recharge", element: <MobileRecharge></MobileRecharge> },
       { path: "/p2p", element: <P2pService></P2pService> },
+      { path: "/buyer-offers", element: <BuyerOfferPage></BuyerOfferPage> },
+      { path: "/join-lists", element: <JoinListPage></JoinListPage> },
+      { path: "/trade-lists", element: <MyTradeList></MyTradeList> },
     ],
   },
   {
