@@ -10,6 +10,7 @@ import P2pService from "../pages/p2p/P2pService";
 import BuyerOfferPage from "../pages/buyerOffer/BuyerOfferPage";
 import JoinListPage from "../pages/joinLists/JoinListPage";
 import MyTradeList from "../pages/tradeList/MyTradeList";
+import OfferList from "../pages/myOffer/OfferList";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
       { path: "/buyer-offers", element: <BuyerOfferPage></BuyerOfferPage> },
       { path: "/join-lists", element: <JoinListPage></JoinListPage> },
       { path: "/trade-lists", element: <MyTradeList></MyTradeList> },
+      { path: "/my-offer-list", element: <OfferList></OfferList> },
     ],
   },
   {

@@ -11,3 +11,19 @@ export const getSellerTradeOfferLists = async (token) => {
     throw error;
   }
 };
+// release payment
+export const releaseAsSeller = async ( token, tradeId) => {
+  try {
+    const response = await api.post(
+      `/api/p2p/seller/trades/${tradeId}/release`,
+      {},
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error release", error);
+    throw error;
+  }
+};
