@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Header from "../../components/shared/Header";
-import OfferList from "./components/offer/OfferList";
+import OfferList from "../myOffer/OfferList";
 
 const P2pService = () => {
   const [activeTab, setActiveTab] = useState("offer");
@@ -47,7 +47,7 @@ const P2pService = () => {
       <div className="p-4">
         {activeTab === "offer" ? (
           <div>
-        <OfferList></OfferList>
+            <OfferList></OfferList>
           </div>
         ) : (
           <div>

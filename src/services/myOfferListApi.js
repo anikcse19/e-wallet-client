@@ -1,6 +1,4 @@
 import { api } from "../config/api";
-
-
 // Add new offer
 export const addOffer = async (offerData, token) => {
   try {
@@ -16,7 +14,7 @@ export const addOffer = async (offerData, token) => {
 
 export const getOfferList = async (token) => {
   try {
-    const response = await api.get("/api/p2p/buyer/offers", {
+    const response = await api.get("/api/p2p/seller/offers", {
       headers: { Authorization: `Bearer ${token}` },
     });
     return response.data;

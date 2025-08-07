@@ -8,42 +8,38 @@ import { getBuyerTradeOfferLists, markPaid } from "../../services/joinOfferList"
 const JoinListPage = () => {
   const [tradeLists, setTradeLists] = useState([]);
   const [loading, setLoading] = useState(true);
-
+   const fetchTradeLists = async () => {
+     const token = localStorage.getItem("token"); // Or use context/state
+     if (!token) return;
+     try {
+       const data = await getBuyerTradeOfferLists(token);
+       setTradeLists(data || []);
+     } catch (error) {
+       console.error("Failed to fetch tradeLists", error);
+     } finally {
+       setLoading(false);
+     }
+   };
   useEffect(() => {
-    const token = localStorage.getItem("token"); // Or use context/state
-    if (!token) return;
-// console.log("hello")
-    const fetchTradeLists = async () => {
-  
-      try {
-        const data = await getBuyerTradeOfferLists(token);
-        setTradeLists(data || []);
-      } catch (error) {
-        console.error("Failed to fetch tradeLists", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     fetchTradeLists();
   }, []);
-console.log("tradelist",tradeLists)
+
   if (loading) return <div className="p-4">Loading...</div>;
   const handlePaid = async (tradeId) => {
     const token = localStorage.getItem("token"); // Or use context/state
     if (!token) return;
-    console.log("token", token)
+
     try {
       const data = await markPaid(token, tradeId);
       if (data) {
+      
         toast.success("paid successfully");
+         fetchTradeLists();
       }
     } catch (error) {
       console.error("Failed to pay", error);
       toast.error("failed to pay")
     }
-
-    console.log(tradeId);
   };
   return (
     <div className=" p-4">
